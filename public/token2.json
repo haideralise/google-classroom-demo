@@ -1,0 +1,8 @@
+{
+    "access_token": "ya29.a0Ae4lvC0i6iUiA0OsqcpT_5YX34XdpazJAKA7KEqzVALy6m7dW5BbSfQjKEtOTZg8HQA9KzhIE6x40ruMwr5zh-RKRcSX3VXgZoo3kq-I2fHuQ1OaFqRp0ymi65pRYWVhjK4yiHndbj_lA5oWZNfh3E7q7Pd3MkIQqKc",
+    "expires_in": 3599,
+    "refresh_token": "1\/\/03sNdkA6KWMI0CgYIARAAGAMSNwF-L9IrUDtd6f_mLrO3eI6VQcEkLqV7lNKSFc9uCdn7qWkMka9c7fev-OhGzLsOgfHjlzkOjhs",
+    "scope": "https:\/\/www.googleapis.com\/auth\/classroom.courses",
+    "token_type": "Bearer",
+    "created": 1588683489
+}
