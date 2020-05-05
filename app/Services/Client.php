@@ -30,7 +30,7 @@ class Client
         $this->_client->setAccessType('offline');
         $this->_user = $user;
         if($this->_user->hasGoogleToken()) {
-
+            $this->_client->setAccessToken($this->_user->google_token);
         }
     }
 
@@ -49,15 +49,14 @@ class Client
         // The file token.json stores the user's access and refresh tokens, and is
         // created automatically when the authorization flow completes for the first
         // time.
-        if ($this->_user->hasGoogleToken()) {
-            $this->_client->setAccessToken($this->_user->google_token);
-        }
 
         // If there is no previous token or it's expired.
         if ($this->_client->isAccessTokenExpired()) {
             // Refresh the token if possible, else fetch a new one.
             if ($this->_client->getRefreshToken()) {
-                $this->_client->fetchAccessTokenWithRefreshToken($this->_client->getRefreshToken());
+                $value =  $this->_client->fetchAccessTokenWithRefreshToken($this->_client->getRefreshToken());
+                $this->_user->google_token = $value;
+                $this->_user->save();
             } else {
                 // Request authorization from the user.
                 $authUrl = $this->_client->createAuthUrl();

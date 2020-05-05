@@ -36,8 +36,6 @@ Route::get('/', function () use($tokenPath) {
     $user = User::first();
     $user->setClient();
     return redirect($user->_client->promptForToken()['url']);
-
-    //return redirect('classes');
 });
 
 
@@ -51,7 +49,6 @@ Route::get('/callback', function () use($tokenPath) {
 Route::get('/classes', function () use($tokenPath) {
     $user = User::first();
     $user->setClient();
-    $user->setAccessToken();
 
     $service = new Google_Service_Classroom($user->_client->getClient());
     // Print the first 10 courses the user has access to.
